@@ -1,0 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Patika_Odev
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Patika.dev Ödev 1 Soru 1 ");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+        /*
+        1.Soru
+        Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin(n).
+        Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin.
+        Kullanıcının girmiş olduğu sayılardan çift olanlar console'a yazdırın.
+        */
+
+        negativeLabel:
+            Console.WriteLine("Pozitif bis sayı girin");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            //n sayısı pozitif kontrol
+            if (n>0)
+            {
+                goto positiveLabel;
+            }
+            if (n<=0)
+            {
+                Console.WriteLine("Girdiğin sayı Pozitif değil tekrar sayı gir");
+                goto negativeLabel;
+            }
+        positiveLabel:
+
+            //Sayılar için array 
+            int[] sayılar = new int[n];
+            
+            for (int i = 0; i < n; i++) 
+            {
+                Console.WriteLine("sayı gir:");
+                sayılar[i] = Convert.ToInt32(Console.ReadLine());
+            
+            }
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("Çift sayılar");
+            for (int i = 0; i < n; i++)
+            {
+                if (sayılar[i]%2==0)
+                {
+                    Console.WriteLine(sayılar[i]);
+                }
+            }
+
+            Console.WriteLine("Patika.dev Ödev 1 Soru 2 ");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            /*
+             Bir konsol uygulamasında kullanıcıdan pozitif iki sayı girmesini isteyin (k, m). 
+             Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. 
+             Kullanıcının girmiş olduğu sayılardan m'e eşit yada tam bölünenleri console'a yazdırın.
+            */
+
+            Console.WriteLine("1.Sayıyı girin : ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("2.Sayıyı girin : ");
+            int m = Convert.ToInt32(Console.ReadLine());
+
+            int [] sayılar1 = new int[k];
+            for (int i = 0; i < k; i++)
+            {
+                Console.WriteLine("Sayı gir: ");
+                sayılar1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            //Sayıların yazdırılması
+            Console.WriteLine("girdiğin ikinci sayıya eşit yada tam bölünen sayılar");
+            for (int i = 0; i < k; i++)
+            {
+                if (sayılar1[i]==m || sayılar1[i]%m==0)
+                {
+                    Console.WriteLine(sayılar1[i]);
+                }
+            }
+
+
+            Console.WriteLine("Patika.dev Ödev 1 Soru 3 ");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            /*
+             Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin (n1).
+             Sonrasında kullanıcıdan n1 adet kelime girmesi isteyin. 
+             Kullanıcının girişini yaptığı kelimeleri sondan başa doğru console'a yazdırın.
+            */
+
+            Console.WriteLine("Bir sayı girin : ");
+
+           int n1 = Convert.ToInt32(Console.ReadLine());
+
+           string [] kelimler = new string[n1];
+
+            for (int i = 0; i < kelimler.Length; i++)
+            {
+                Console.WriteLine("kelime gir");
+                kelimler[i] = Console.ReadLine();
+            }
+            Console.WriteLine("kelimeler tersten");
+            for (int i = n1-1; i>=0; i--)
+            {
+                Console.WriteLine(kelimler[i]); 
+            }
+
+
+            Console.WriteLine("Patika.dev Ödev 1 Soru 4 ");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            Console.WriteLine("*********");
+            /*
+            Bir konsol uygulamasında kullanıcıdan bir cümle yazması isteyin. 
+            Cümledeki toplam kelime ve harf sayısını console'a yazdırın.
+             */
+            Console.WriteLine("Bir tane cümle yazın : ");
+            int harf = 0;
+            string cumle=Console.ReadLine();
+            string [] cumle1 = cumle.Split(' ');
+
+
+            for (int i = 0; i < cumle1.Length; i++)
+            {
+                harf = harf + cumle1[i].Length;
+            }
+            Console.WriteLine(" Yazı toplam {0} kelimedir. ", cumle1.Length);
+            Console.WriteLine("toplam harf: {0}", harf);
+          
+            Console.ReadKey();
+        }
+    }
+}
